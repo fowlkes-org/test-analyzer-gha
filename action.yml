@@ -1,0 +1,25 @@
+# action.yml
+name: "Hello World"
+description: "Greet someone and record the time"
+inputs:
+  junit-location: #
+    description: "location of junit report"
+    required: true
+    default: "./junit.xml"
+  type:
+    description: "test report type: unit, integration, e2e"
+    required: true
+  coverage-location: #
+    description: "file location of lcov coverage report"
+    required: false
+    default: "coverage/lcov.info"
+
+outputs:
+  run-url: # id of output
+    description: "test analysis url"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.junit-location }}
+    - ${{ inputs.coverage-location }}
