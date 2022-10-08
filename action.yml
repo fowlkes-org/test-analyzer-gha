@@ -9,6 +9,9 @@ inputs:
   type:
     description: "test report type: unit, integration, e2e"
     required: true
+  key:
+    description: "api key associated to your team"
+    required: true
   coverage-location: #
     description: "file location of lcov coverage report"
     required: false
