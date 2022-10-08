@@ -14,3 +14,12 @@ This action sends the raw test reporting data from your CI run to the test analy
 
 ## `key`
 **Required** The api key associated to your project in test analyzer.
+
+
+## Example usage
+
+uses: test-analyzer-gha@v1
+with:
+  junit-location: './junit.xml'
+  type: 'integration'
+  key: '758b23d5-9701-45e6-841d-036f0bb5c356'
