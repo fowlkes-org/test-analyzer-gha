@@ -1,5 +1,5 @@
 #!/bin/bash
 
 echo "junit location set $1"
-time=$(date)
+time="https://www.google.com"
 echo "::set-output name=run-url::$time"
