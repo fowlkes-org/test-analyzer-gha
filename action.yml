@@ -1,8 +1,8 @@
 # action.yml
-name: "Hello World"
-description: "Greet someone and record the time"
+name: "Test Analyzer Github Action"
+description: "upload and track testing artifacts for summary and support"
 inputs:
-  junit-location: #
+  junit-location:
     description: "location of junit report"
     required: true
     default: "./junit.xml"
@@ -12,13 +12,13 @@ inputs:
   key:
     description: "api key associated to your team"
     required: true
-  coverage-location: #
+  coverage-location:
     description: "file location of lcov coverage report"
     required: false
     default: "coverage/lcov.info"
 
 outputs:
-  run-url: # id of output
+  run-url:
     description: "test analysis url"
 runs:
   using: "docker"
