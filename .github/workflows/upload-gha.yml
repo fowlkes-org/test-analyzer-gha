@@ -26,4 +26,4 @@ jobs:
           coverage-location: "./fixtures/lcov-report/lcov.info"
           key: ${{ secrets.ANALYZER_KEY }}
       - name: Get the output url
-        run: echo "The output url is ${{ steps.upload.outputs.url }}"
+        run: echo "The output url is ${{ steps.upload.outputs.run-url }}"
