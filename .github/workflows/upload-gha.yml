@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: Upload files to Test Analyzer
         id: upload
-        uses: fowlkes-org/test-analyzer-gha@v1.0.1
+        uses: fowlkes-org/test-analyzer-gha@v1.0.2
         with:
           junit-location: "./fixtures/junit/test.xml"
           coverage-location: "./fixtures/lcov-report/lcov.info"
