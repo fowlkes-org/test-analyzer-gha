@@ -1,0 +1,29 @@
+name: test upload for analyzer
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      junit-location:
+        description: "junit file location"
+        required: true
+        default: "./fixtures/junit/test.xml"
+      coverage-location:
+        description: "lcov coverage file location"
+        required: true
+        default: "./fixtures/lcov-report/lcov.info"
+
+jobs:
+  test-analzyer:
+    runs-on: ubuntu-latest
+    name: A job to run the test analysis upload
+    steps:
+      - name: Upload files to Test Analyzer
+        id: upload
+        uses: fowlkes-org/test-analyzer-gha@v1.0.1
+        with:
+          junit-location: "./fixtures/junit/test.xml"
+          coverage-location: "./fixtures/lcov-report/lcov.info"
+          key: ${{ secrets.ANALYZER_KEY }}
+      - name: Get the output url
+        run: echo "The output url is ${{ steps.upload.outputs.url }}"
